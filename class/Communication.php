@@ -26,6 +26,12 @@ class Communication
         $sql->execute();
         return ($params["response"]) ? $sql->fetchAll(PDO::FETCH_ASSOC) : true;
     }
+
+    // Get the last inserted id
+    public function lastInsertId()
+    {
+        return $this->cnx->lastInsertId();
+    }
 }
 ?>
 
